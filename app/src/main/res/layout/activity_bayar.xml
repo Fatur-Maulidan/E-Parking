@@ -5,135 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_marginLeft="20dp"
-    android:layout_marginRight="20dp"
     tools:context=".Bayar">
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageButton
-                android:layout_width="70dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:background="@null"
-                android:backgroundTint="@null"
-                android:src="@drawable/backbutton"
-                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
-                tools:src="@drawable/backbutton" />
-
-        </LinearLayout>
-
     <LinearLayout
-        android:orientation="vertical"
-        android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
-        <LinearLayout
+        <ImageButton
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="NO POLISI : "
-                android:textSize="25dp"
-                android:fontFamily="@font/monserrat"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text=" "
-                android:id="@+id/nop"
-                android:textSize="25dp"
-                android:fontFamily="@font/monserrat"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="MASUK : "
-                android:textSize="25dp"
-                android:fontFamily="@font/monserrat"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text=" "
-                android:id="@+id/JAMmasuk"
-                android:textSize="25dp"
-                android:fontFamily="@font/monserrat"/>
-        </LinearLayout>
-        <LinearLayout
-            android:paddingTop="40dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="KELUAR : "
-                android:textSize="25dp"
-                android:fontFamily="@font/monserrat"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text=" "
-                android:id="@+id/JAMkeluar"
-                android:textSize="25dp"
-                android:fontFamily="@font/monserrat"/>
-        </LinearLayout>
-        <LinearLayout
-            android:paddingTop="40dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="JUMLAH : "
-                android:textSize="25dp"
-                android:fontFamily="@font/monserrat"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text=" "
-                android:id="@+id/jmlh"
-                android:textSize="25dp"
-                android:fontFamily="@font/monserrat"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:layout_marginTop="50dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/button"
-                android:text="SIMPAN"
-                android:id="@+id/btn_simpan"
-                android:textSize="72px"
-                android:fontFamily="@font/monserrat"
-                android:backgroundTint="@null"
-                app:backgroundTint="@null"
+            android:layout_height="match_parent"
             />
-        </LinearLayout>
+
+
 
     </LinearLayout>
 

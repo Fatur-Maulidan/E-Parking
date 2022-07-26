@@ -3,6 +3,8 @@ package com.example.e_parking;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothManager;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -33,8 +35,13 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        if(getSupportActionBar() != null){
-            getSupportActionBar().hide();
+        BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        if (bluetoothAdapter == null){
+            Toast.makeText(Home.this, "Perangkat tidak memiliki akses Bluetooth", Toast.LENGTH_SHORT).show();
+        } else {
+            if(!bluetoothAdapter.isEnabled()){
+                startActivityForResult(new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE),1);
+            }
         }
 
         Intent i = getIntent();
@@ -43,7 +50,7 @@ public class Home extends AppCompatActivity {
         id = Preferences.getKey_Id(getBaseContext());
 
         if(angka==1){
-            Toast.makeText(Home.this, "Selamat Datang "+id, Toast.LENGTH_SHORT).show();
+            Toast.makeText(Home.this, "Selamat Datang "+PNama, Toast.LENGTH_SHORT).show();
             angka++;
         }
 

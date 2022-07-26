@@ -16,21 +16,24 @@
         android:gravity="right"
 
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/bar_uji_petik">
+        app:layout_constraintBottom_toTopOf="@id/bar_uji_petik"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
 
 
         <Button
+            android:id="@+id/logout"
             android:layout_width="100dp"
             android:layout_height="40dp"
-            android:id="@+id/logout"
-            android:background="@drawable/button"
             android:layout_marginRight="10dp"
-            android:text="LogOut"
-            android:fontFamily="@font/monserrat"
+            android:background="@drawable/button"
             android:backgroundTint="@null"
-            android:textStyle="bold"
+            android:fontFamily="@font/monserrat"
+            android:text="LogOut"
+            android:textColor="@color/white"
             android:textSize="10dp"
-            android:textColor="@color/white"/>
+            android:textStyle="bold"
+            tools:ignore="TouchTargetSizeCheck" />
 
 
     </LinearLayout>
@@ -67,7 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/monserrat"
-            android:text="E-UJI PETIK"
+            android:text="E-PARKING"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="35dp"

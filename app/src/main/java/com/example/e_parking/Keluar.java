@@ -49,7 +49,7 @@ public class Keluar extends AppCompatActivity {
             @Override
             public void onClick(KeluarKendaraanModel.DataKendaraan data) {
 //                Toast.makeText(keluar.this, "",Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(Keluar.this, Bayar.class);
+                Intent i = new Intent(Keluar.this, Struk.class);
                 i.putExtra("ID",data.getId());
                 i.putExtra("Initialize",initialize);
                 startActivity(i);
