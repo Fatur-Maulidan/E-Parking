@@ -26,6 +26,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
+                android:id="@+id/btn_back_masuk"
                 android:background="@null"
                 android:backgroundTint="@null"
                 android:src="@drawable/backbutton"
@@ -60,6 +61,7 @@
                     android:layout_width="80dp"
                     android:layout_height="50dp"
                     android:maxLength="2"
+                    android:textAlignment="center"
                     android:editable="false"
                     android:id="@+id/ET_kota"/>
 
@@ -67,6 +69,7 @@
                     android:id="@+id/ET_Angka"
                     android:layout_width="150dp"
                     android:layout_height="50dp"
+                    android:textAlignment="center"
                     android:layout_marginLeft="10dp"
                     android:fontFamily="@font/monserrat"
                     android:inputType="number"
@@ -75,6 +78,8 @@
                     android:fontFamily="@font/monserrat"
                     android:layout_width="80dp"
                     android:layout_height="50dp"
+                    android:textAlignment="center"
+                    android:inputType="textCapCharacters"
                     android:layout_marginLeft="10dp"
                     android:maxLength="3"
                     android:id="@+id/ET_Aterakhir"/>

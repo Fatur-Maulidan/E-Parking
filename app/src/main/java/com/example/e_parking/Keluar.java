@@ -4,15 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
-import android.widget.Toast;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import Model.KeluarKendaraanModel;
 import retrofit.ApiService;
 import retrofit2.Call;
@@ -26,18 +26,26 @@ public class Keluar extends AppCompatActivity {
     int initialize;
     private RecyclerView recyclerView;
     private MainAdapter mainAdapter;
+    ImageButton var_back;
 
     private List<KeluarKendaraanModel.DataKendaraan> datas = new ArrayList<>();
     final ArrayList<String> list = new ArrayList<>();
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_keluar);
+        var_back = findViewById(R.id.btn_back_keluar);
+
         Intent i = getIntent();
         Token = Preferences.getKEY_Token(getBaseContext());
         initialize = i.getExtras().getInt("Initialize");
+
+        var_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Keluar.this,Home.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+            }
+        });
 
         setupView();
         setupRecycleView();

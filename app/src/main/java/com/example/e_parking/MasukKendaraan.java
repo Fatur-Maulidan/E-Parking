@@ -2,6 +2,7 @@ package com.example.e_parking;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -9,6 +10,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import Model.Data;
@@ -20,22 +22,31 @@ import retrofit2.Response;
 public class MasukKendaraan extends AppCompatActivity {
     EditText kota, angka, terakhir;
     int kategori;
-    Button btn_mulaii;
+    Button var_mulai;
+    ImageButton var_back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_masuk_kendaraan);
-        kota = (EditText) findViewById(R.id.ET_kota);
-        angka = (EditText) findViewById(R.id.ET_Angka);
-        terakhir = (EditText) findViewById(R.id.ET_Aterakhir);
-        btn_mulaii = (Button) findViewById(R.id.btn_mulai);
+        kota = findViewById(R.id.ET_kota);
+        angka = findViewById(R.id.ET_Angka);
+        terakhir = findViewById(R.id.ET_Aterakhir);
+        var_mulai = findViewById(R.id.btn_mulai);
+        var_back = findViewById(R.id.btn_back_masuk);
 
         kota.setText("D");
         Intent i = getIntent();
         kategori = i.getExtras().getInt("Kategori");
 
-        btn_mulaii.setOnClickListener(new View.OnClickListener() {
+        var_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MasukKendaraan.this, Home.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+            }
+        });
+
+        var_mulai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(TextUtils.isEmpty(angka.getText().toString()) || TextUtils.isEmpty(terakhir.getText().toString())){

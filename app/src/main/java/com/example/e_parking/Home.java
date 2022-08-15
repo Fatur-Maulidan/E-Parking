@@ -4,15 +4,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.bluetooth.BluetoothAdapter;
-import android.bluetooth.BluetoothManager;
+import android.bluetooth.BluetoothServerSocket;
+import android.bluetooth.BluetoothSocket;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.Configuration;
+import android.graphics.ColorSpace;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.dantsu.escposprinter.EscPosPrinter;
 
 import Model.LogoutModel;
 import retrofit.ApiService;
@@ -25,34 +28,19 @@ public class Home extends AppCompatActivity {
     Button btnmbl_masuk, btnmbl_keluar;
     Button btnmtr_masuk, btnmtr_keluar;
     Button btn_logout;
-    String MNum, PNama, token;
-    int id, angka = 1;
+    String PNama, token;
+    int id;
 
-    private final static int EXIT_CODE = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-        if (bluetoothAdapter == null){
-            Toast.makeText(Home.this, "Perangkat tidak memiliki akses Bluetooth", Toast.LENGTH_SHORT).show();
-        } else {
-            if(!bluetoothAdapter.isEnabled()){
-                startActivityForResult(new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE),1);
-            }
-        }
-
         Intent i = getIntent();
         PNama = Preferences.getKEY_User(getBaseContext());
         token = Preferences.getKEY_Token(getBaseContext());
         id = Preferences.getKey_Id(getBaseContext());
-
-        if(angka==1){
-            Toast.makeText(Home.this, "Selamat Datang "+PNama, Toast.LENGTH_SHORT).show();
-            angka++;
-        }
 
         btnmbl_masuk = (Button) findViewById(R.id.M_mobil);
         btnmbl_keluar = (Button) findViewById(R.id.K_mobil);
@@ -128,8 +116,8 @@ public class Home extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         new AlertDialog.Builder(this)
-                .setTitle("Really Exit?")
-                .setMessage("Are you sure you want to exit?")
+                .setTitle("Keluar?")
+                .setMessage("Anda yakin ingin keluar dari aplikasi?")
                 .setNegativeButton(android.R.string.no, null)
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
 

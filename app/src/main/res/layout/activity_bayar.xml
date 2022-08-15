@@ -1,23 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".Bayar">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-        <ImageButton
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="250dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/button"
+                android:backgroundTint="@null"
+                android:fontFamily="@font/monserrat"
+                android:text="GOPAY"
+                android:id="@+id/BTN_Gopay"
+                android:textColor="@color/white"
+                app:backgroundTint="@null"
             />
 
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="250dp"
+                android:background="@drawable/button"
+                android:backgroundTint="@null"
+                android:fontFamily="@font/monserrat"
+                android:layout_marginLeft="20dp"
+                android:text="OVO"
+                android:textColor="@color/white"
+                app:backgroundTint="@null"
+                android:id="@+id/BTN_OVO"
+                />
+        </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            >
 
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="250dp"
+                android:background="@drawable/button"
+                android:backgroundTint="@null"
+                android:fontFamily="@font/monserrat"
+                android:text="E-Toll"
+                android:textColor="@color/white"
+                app:backgroundTint="@null"
+                android:id="@+id/BTN_EToll"
+                />
+
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="250dp"
+                android:background="@drawable/button"
+                android:backgroundTint="@null"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/monserrat"
+                android:text="CASH"
+                android:textColor="@color/white"
+                app:backgroundTint="@null"
+                android:id="@+id/BTN_cash"/>
+        </LinearLayout>
     </LinearLayout>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -74,9 +74,7 @@ public class Login_Activity extends AppCompatActivity {
 
 
     public void CLog(LoginModel loginModel){
-        Call<LoginModel> log = ApiService.endpoint().sendLogin(loginModel);
-
-        log.enqueue(new Callback<LoginModel>() {
+        ApiService.endpoint().sendLogin(loginModel).enqueue(new Callback<LoginModel>() {
             @Override
             public void onResponse(Call<LoginModel> call, Response<LoginModel> response) {
                if(response.isSuccessful()){
@@ -89,6 +87,7 @@ public class Login_Activity extends AppCompatActivity {
                        com.example.e_parking.Preferences.setKEY_User(getBaseContext(),loginModel.getParker_name());
                        com.example.e_parking.Preferences.setKEY_Token(getBaseContext(),loginModel.getToken());
 
+                       Toast.makeText(Login_Activity.this, "Selamat Datang "+loginModel.getParker_name(),Toast.LENGTH_SHORT).show();
                        Intent i = new Intent(Login_Activity.this, Home.class);
                        startActivity(i);
                        finish();

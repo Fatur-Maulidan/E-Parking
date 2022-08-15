@@ -5,12 +5,30 @@ import java.sql.Timestamp;
 
 public class DetailModel {
     private boolean status;
+    private String location;
+    private String vehicle_name;
     private int id;
     private int vehicle_id;
     private int vehicle_price;
     private String license_plate;
     private int in_time;
     private int out_time;
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getVehicle_name() {
+        return vehicle_name;
+    }
+
+    public void setVehicle_name(String vehicle_name) {
+        this.vehicle_name = vehicle_name;
+    }
 
     public boolean isStatus() {
         return status;

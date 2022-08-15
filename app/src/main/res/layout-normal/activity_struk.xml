@@ -19,6 +19,7 @@
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
+                android:id="@+id/btn_back_struk"
                 android:background="@null"
                 android:backgroundTint="@null"
                 android:src="@drawable/backbutton"
@@ -41,6 +42,48 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:text="LOKASI : "
+                android:textSize="25dp"
+                android:fontFamily="@font/monserrat"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=" "
+                android:id="@+id/lokasi"
+                android:textSize="25dp"
+                android:fontFamily="@font/monserrat"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="KENDARAAN : "
+                android:textSize="25dp"
+                android:fontFamily="@font/monserrat"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=" "
+                android:id="@+id/jenis_kendaraan"
+                android:textSize="25dp"
+                android:fontFamily="@font/monserrat"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:text="NO POLISI : "
                 android:textSize="25dp"
                 android:fontFamily="@font/monserrat"/>
@@ -52,6 +95,29 @@
                 android:textSize="25dp"
                 android:fontFamily="@font/monserrat"/>
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="TANGGAL : "
+                android:textSize="25dp"
+                android:fontFamily="@font/monserrat"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=" "
+                android:id="@+id/TGLmasuk"
+                android:textSize="25dp"
+                android:fontFamily="@font/monserrat"/>
+        </LinearLayout>
+
         <LinearLayout
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
@@ -129,9 +195,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/button"
-                android:text="SIMPAN"
+                android:text="PILIH PEMBAYARAN"
+                android:id="@+id/btn_pil_bayar"
+                android:layout_marginBottom="20dp"
+                android:textSize="25dp"
+                android:fontFamily="@font/monserrat"
+                android:backgroundTint="@null"
+                app:backgroundTint="@null"
+                />
+
+            <Button
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button"
+                android:text="BAYAR"
                 android:id="@+id/btn_simpan"
-                android:textSize="30dp"
+                android:textSize="25dp"
                 android:fontFamily="@font/monserrat"
                 android:backgroundTint="@null"
                 app:backgroundTint="@null"
