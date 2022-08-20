@@ -27,6 +27,7 @@ public class Keluar extends AppCompatActivity {
     private RecyclerView recyclerView;
     private MainAdapter mainAdapter;
     ImageButton var_back;
+    LoadingDialog loadingDialog = new LoadingDialog(Keluar.this);
 
     private List<KeluarKendaraanModel.DataKendaraan> datas = new ArrayList<>();
     final ArrayList<String> list = new ArrayList<>();
@@ -80,6 +81,7 @@ public class Keluar extends AppCompatActivity {
                 if (response.isSuccessful()){
                     List<KeluarKendaraanModel.DataKendaraan> datas = response.body().getData();
                     mainAdapter.setData(datas);
+                    loadingDialog.startLoadingDialog();
                 }
             }
             @Override

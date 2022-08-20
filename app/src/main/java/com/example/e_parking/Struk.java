@@ -44,6 +44,7 @@ public class Struk extends AppCompatActivity {
     Button var_bayar, var_pil_bayar;
     ImageButton var_back;
     TextView total;
+    LoadingDialog loadingDialog = new LoadingDialog(Struk.this);
 
     public static final int PERMISSION_BLUETOOTH = 1;
     public static final int PERMISSION_BLUETOOTH_ADMIN = 2;
@@ -53,6 +54,9 @@ public class Struk extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_struk);
+        if(getIntent().getExtras().getString("pilih") != null){
+            loadingDialog.startLoadingDialog();
+        }
         getBayar();
 
         total = findViewById(R.id.jmlh);
@@ -71,6 +75,7 @@ public class Struk extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         if(getIntent().getExtras().getString("pilih") != null) {
+                            loadingDialog.startLoadingDialog();
                             SimpanKendaraan(simpanKendaraan());
                         }else {
                             Toast.makeText(Struk.this, "Silahkan Pilih Pembayaran terlebih dahulu", Toast.LENGTH_SHORT).show();
