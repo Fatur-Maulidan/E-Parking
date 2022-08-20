@@ -24,6 +24,7 @@ public class MasukKendaraan extends AppCompatActivity {
     int kategori;
     Button var_mulai;
     ImageButton var_back;
+    LoadingDialog loadingDialog = new LoadingDialog(MasukKendaraan.this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +53,7 @@ public class MasukKendaraan extends AppCompatActivity {
                 if(TextUtils.isEmpty(angka.getText().toString()) || TextUtils.isEmpty(terakhir.getText().toString())){
                     Toast.makeText(MasukKendaraan.this, "Masukkan No Polisi secara benar", Toast.LENGTH_LONG).show();
                 } else {
+                    loadingDialog.startLoadingDialog();
                     Ksend(kendaraan());
                 }
             }
@@ -72,6 +74,7 @@ public class MasukKendaraan extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<Data> call, Response<Data> response) {
                     if(response.isSuccessful()){
+                        loadingDialog.dissmissDialog();
                         startActivity(new Intent(MasukKendaraan.this, Home.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
                         finish();
                     } else {
